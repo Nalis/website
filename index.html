@@ -1,44 +1,52 @@
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="custom.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"> </script>
 
     <title>Sample "Hello, World" Application</title>
   </head>
-  <body>
+  <body ng-app="">
 
   <div class="home-page">
     <h1>Sample "Hello, World" Application</h1>
     <div class="icons">
-    <img id="phone" src="Icons/phone.svg">
-    <img id="watch" src="Icons/watchWithoutBackground.png">
-    <img id="computer" src = "Icons/desktop-pc-vector-crop.jpg">
-    </div>
+    <img id="phone" ng-click="phone_active= !phone_active" ng-class="{active: phone_active}">
+    <img id="watch" ng-click="watch_active= !watch_active" ng-class="{active: watch_active}">
+      <!--<div class="computer" ng-click="computer_active = !computer_active" ng-class="{active: computer_active}" >-->
+      <img id="computer" ng-click="computer_active = !computer_active" ng-class="{active: computer_active}">
+
+      </div>
       <div class="step">
     <div class="step-one">
       <h2> Step 1</h2>
     </div>
       <div class="main-business">
       Main bussiness
-      <input type="text" placeholder="smth"  >
-     </div>
+      <textarea cols="50" rows="10" type="text" class="form-control" placeholder="We own Five Star Cleaning, an eco-friendly housekeeping service that pampers you and your home [what your business does]. Typical cleaning services make you prep your home ahead of time, supervise to prevent theft and hang around for hours while the cleaners do their work. Because we require no prep, this saves time right off the top, and we are bonded so our service is worry-free, allowing you to go about your day [what problem does it solve]. And, we always send a minimum team of three to get the job done quickly [how it's different]. Imagine coming home from a long day and your laundry is all done, your bed has been turned down and there are fresh flowers awaiting you. That's the extra pampering we offer that sets us apart from all the rest [why you should care]"></textarea>
+      </div>
      <div class="problem">
-       Problem <input type="text" placeholder="smth">
+       Problem
+       <textarea cols="50" rows="3" type="text" class="form-control" placeholder="smth"></textarea>
      </div>
      <div class="solving">
-     How you want to solve your problem <input type ="text" placeholder="smth">
+     How you want to solve your problem
+       <textarea cols="50" rows="3" type ="text" class="form-control" placeholder="smth"></textarea>
      </div>
        </div>
     <div class="step">
       <h2>Step 2</h2>
       <div class="idea">
-      Your idea <input type="text" placeholder="smth">
+      Your idea
+        <textarea cols="50" rows="3" type="text" class="form-control" placeholder="smth"></textarea>
       </div>
 
     </div>
     <div class="step">
       <h2>Step 3</h2>
       <div class="technology">
-      Technology <input type="text" placeholder="smth">
+      Technology
+        <textarea cols="50" rows="3" type="text" class="form-control" placeholder="smth"></textarea>
       </div>
       </div>
 
