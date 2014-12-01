@@ -4,11 +4,9 @@ $input_form = json_decode(file_get_contents('php://input'), true);
 
 try {
   $contact = new Contact($input_form);
-  $contact->sendEmail();
+  $result = $contact->sendMail();
 } catch(BadMethodCallException $e) {
-  echo "exception";
-} finally {
-  echo 'Mail sent';
+  $result = "exception";
 }
 
-echo json_encode($input_form);
+echo json_encode($result);

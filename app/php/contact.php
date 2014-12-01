@@ -14,6 +14,10 @@ class Contact {
     return $mail;
   }
 
+  public function sendMail() {
+    return mail('Valentin Aitken <bostko@gmail.com>', 'Contact form', $this->mailText());
+  }
+
   private function validate($form) {
     if(!$form['contact_form']) {
       throw new BadMethodCallException('no contact form');
