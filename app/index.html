@@ -6,15 +6,18 @@
     <title>Valentin Aitken - developing web apps</title>
     <meta name="keywords" content="SaaS, IT services, java, android, ruby, rails, javascript, angularjs, ember.js, Valentin Aitken, Валентин Ейткен" />
 
-    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">-->
     <link rel="stylesheet" type="text/css" href="custom.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"> </script>
-  </head>
+
+		<!--<script src="services/submit_contact_form_factory.js"></script>-->
+
+	</head>
   <body>
   <header>
 
   </header>
-  <main>
+  <main ng-controller="SubmitContactFormController">
+		<form  ng-submit="submitForm(contactForm)">
     <h1>Submit your request</h1>
     <div class="icons">
     <img id="phone" ng-click="phone_active= !phone_active" ng-class="{active: phone_active}">
@@ -29,7 +32,7 @@
     </div>
       <div class="main-business">
       Main bussiness
-      <textarea cols="50" rows="2" type="text" class="form-control" placeholder="We own Five Star Cleaning, an eco-friendly housekeeping service that pampers you and your home [what your business does]."></textarea>
+      <textarea cols="50" ng-model="contactForm.hi" rows="2" type="text" class="form-control" placeholder="We own Five Star Cleaning, an eco-friendly housekeeping service that pampers you and your home [what your business does]."></textarea>
       </div>
      <div class="problem">
        Problem
@@ -54,11 +57,19 @@
       Technology
         <textarea cols="50" rows="3" type="text" class="form-control" placeholder="smth"></textarea>
       </div>
-      </div>
 
+			<input type="submit" value="Submit your idea">
+		</div>
+		</form>
   </main>
   <footer>
     Copyrighted &copy; 2015
   </footer>
+
+	<script src="bower_components/angular/angular.js"> </script>
+	<script src="bower_components/angular-route/angular-route.js"> </script>
+	<script src="app.js"></script>
+	<script src="controllers/submit_contact_form_controller.js"></script>
+	<script src="services/submit_contact_form_factory.js"></script>
   </body>
 </html>
