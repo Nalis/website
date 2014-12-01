@@ -1,75 +1,96 @@
 <!DOCTYPE html>
-<html ng-app="website">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Valentin Aitken - developing web apps</title>
-    <meta name="keywords" content="SaaS, IT services, java, android, ruby, rails, javascript, angularjs, ember.js, Valentin Aitken, Валентин Ейткен" />
+<html data-ng-app="website">
 
-    <!--<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">-->
-    <link rel="stylesheet" type="text/css" href="custom.css">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Valentin Aitken - developing web apps</title>
+  <meta name="keywords" content="SaaS, IT services, java, android, ruby, rails, javascript, angularjs, ember.js, Valentin Aitken, Валентин Ейткен" />
 
-		<!--<script src="services/submit_contact_form_factory.js"></script>-->
+  <!--<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">-->
+  <link rel="stylesheet" type="text/css" href="custom.css">
+  <link href='//fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
-	</head>
-  <body>
-  <header>
+  <!--<script src="services/submit_contact_form_factory.js"></script>-->
 
-  </header>
-  <main ng-controller="SubmitContactFormController">
-		<form  ng-submit="submitForm(contactForm)">
+</head>
+
+<body>
+<header>
+
+</header>
+<main data-ng-controller="SubmitContactFormController">
+  <form data-ng-submit="submitForm(contactForm)">
     <h1>Submit your request</h1>
     <div class="icons">
-    <img id="phone" ng-click="phone_active= !phone_active" ng-class="{active: phone_active}">
-    <img id="watch" ng-click="watch_active= !watch_active" ng-class="{active: watch_active}">
-      <!--<div class="computer" ng-click="computer_active = !computer_active" ng-class="{active: computer_active}" >-->
-      <img id="computer" ng-click="computer_active = !computer_active" ng-class="{active: computer_active}">
+      <img id="phone" data-ng-click="phone_active= !phone_active" data-ng-class="{active: phone_active}" />
+      <img id="watch" data-ng-click="watch_active= !watch_active" data-ng-class="{active: watch_active}" />
+      <!--<div class="computer" data-ng-click="computer_active = !computer_active" data-ng-class="{active: computer_active}" >-->
+      <img id="computer" data-ng-click="computer_active = !computer_active" data-ng-class="{active: computer_active}" />
 
-      </div>
-      <div class="step">
-    <div class="step-one">
-      <h2> Step 1</h2>
     </div>
-      <div class="main-business">
-      Main bussiness
-      <textarea cols="50" ng-model="contactForm.hi" rows="2" type="text" class="form-control" placeholder="We own Five Star Cleaning, an eco-friendly housekeeping service that pampers you and your home [what your business does]."></textarea>
+    <div class="step">
+      <div class="step-one">
+        <h2>Step 1</h2>
       </div>
-     <div class="problem">
-       Problem
-       <textarea cols="50" rows="5" type="text" class="form-control" placeholder="Typical cleaning services make you prep your home ahead of time, supervise to prevent theft and hang around for hours while the cleaners do their work. Because we require no prep, this saves time right off the top, and we are bonded so our service is worry-free, allowing you to go about your day [what problem does it solve]. And, we always send a minimum team of three to get the job done quickly [how it's different]. Imagine coming home from a long day and your laundry is all done, your bed has been turned down and there are fresh flowers awaiting you. That's the extra pampering we offer that sets us apart from all the rest [why you should care]"></textarea>
-     </div>
-     <div class="solving">
-     How you want to solve your problem
-       <textarea cols="50" rows="6" type ="text" class="form-control" placeholder="smth"></textarea>
-     </div>
-       </div>
+      <div>
+        <h3>Email</h3>
+        <input ng-model="contactForm.client_email" type="text" placeholder="Email for contact">
+      </div>
+      <div class="main-business">
+        Main bussiness
+        <textarea cols="50" data-ng-model="contactForm.client_main_business" rows="2" class="form-control"
+                  placeholder="We own Five Star Cleaning, an eco-friendly housekeeping service that pampers you and your home [what your business does]."></textarea>
+      </div>
+      <div class="problem">
+        Problem you are facing
+        <textarea data-ng-model="contactForm.client_problem" cols="50" rows="5" class="form-control"
+                  placeholder="Typical cleaning services make you prep your home ahead of time, supervise to prevent theft and
+                   hang around for hours while the cleaners do their work. Because we require no prep, this saves time right off the top,
+                    and we are bonded so our service is worry-free, allowing you to go about your day [what problem does it solve]. And, we always send a minimum team of three to get the job done quickly [how it's different].
+                    Imagine coming home from a long day and your laundry is all done, your bed has been turned down and there are fresh flowers awaiting you.
+                    That's the extra pampering we offer that sets us apart from all the rest [why you should care]"></textarea>
+      </div>
+    </div>
     <div class="step">
       <h2>Step 2</h2>
       <div class="idea">
-      Your idea
-        <textarea cols="50" rows="3" type="text" class="form-control" placeholder="smth"></textarea>
+        Your idea
+        <textarea data-ng-model="contactForm.basic_idea" cols="50" rows="3" class="form-control" placeholder="smth"></textarea>
       </div>
-
     </div>
     <div class="step">
       <h2>Step 3</h2>
       <div class="technology">
-      Technology
-        <textarea cols="50" rows="3" type="text" class="form-control" placeholder="smth"></textarea>
+        <div class="summary">
+          <h2>My Business</h2>
+          <p>{{contactForm.client_main_business}}</p>
+
+          <h2>Problem I am facing</h2>
+          <p>{{contactForm.client_problem}}</p>
+
+          <h1>My idea</h1>
+          <small>Give more hints for the idea</small>
+          <p>{{contactForm.basic_idea}}</p>
+        </div>
+        Technology preferences
+        <textarea cols="50" rows="3" class="form-control" placeholder="smth"></textarea>
       </div>
+      <input type="submit" value="Submit your idea">
+    </div>
+  </form>
+</main>
+<footer>
+  Copyrighted &copy; 2015
+</footer>
 
-			<input type="submit" value="Submit your idea">
-		</div>
-		</form>
-  </main>
-  <footer>
-    Copyrighted &copy; 2015
-  </footer>
+<script src="bower_components/angular/angular.js">
+</script>
+<script src="bower_components/angular-route/angular-route.js">
+</script>
+<script src="app.js"></script>
+<script src="controllers/submit_contact_form_controller.js"></script>
+<script src="services/submit_contact_form_factory.js"></script>
+</body>
 
-	<script src="bower_components/angular/angular.js"> </script>
-	<script src="bower_components/angular-route/angular-route.js"> </script>
-	<script src="app.js"></script>
-	<script src="controllers/submit_contact_form_controller.js"></script>
-	<script src="services/submit_contact_form_factory.js"></script>
-  </body>
 </html>
