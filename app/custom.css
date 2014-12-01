@@ -16,12 +16,12 @@ h1 {
 }
 
 input {
+    font-size: 1.1em;
     width: 60%;
-    height: 50pt;
     margin: 20%;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    padding: 1%;
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+    padding: 0.1em;
 }
 
 .step {
@@ -29,7 +29,6 @@ input {
     text-align: center;
     color: #000;
     font-weight: 400;
-    font-size: 22pt;
 }
 
 .step h2 {
