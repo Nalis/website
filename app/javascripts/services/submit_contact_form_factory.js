@@ -1,5 +1,5 @@
 angular.module('website').
-  factory('submit_contact_form_factory', function($http) {
+  factory('submit_contact_form_factory', ['$http', function($http) {
         var CONFIG = {};
         CONFIG.SUBMIT_CONTACT_FORM = '/contact_handler.php';
 
@@ -12,4 +12,4 @@ angular.module('website').
         };
 
         return dataFactory;
-    });
+    }]);
