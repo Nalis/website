@@ -1,13 +1,11 @@
 <form data-ng-submit="submitForm(contactForm)">
   <strong ng-if="status" class="status" ng-class="status_code">{{status.message}}</strong>
   <h1>Submit your request</h1>
-  <!--
   <div class="icons">
-    <img id="phone" data-ng-click="phone_active= !phone_active" data-ng-class="{active: phone_active}" />
-    <img id="watch" data-ng-click="watch_active= !watch_active" data-ng-class="{active: watch_active}" />
-    <img id="computer" data-ng-click="computer_active = !computer_active" data-ng-class="{active: computer_active}" />
+    <img class="rotate" id="phone" data-ng-click="phone_active= !phone_active" data-ng-class="{active: phone_active}" />
+    <img class="rotate" id="watch" data-ng-click="watch_active= !watch_active" data-ng-class="{active: watch_active}" />
+    <img class="rotate-computer" id="computer" data-ng-click="computer_active = !computer_active" data-ng-class="{active: computer_active}" />
   </div>
-  -->
   <div class="step">
     <div>
       <label for="email_input">Email</label>
