@@ -145,7 +145,7 @@ input.incorrect, textarea.incorrect {
 }
 
 .rotate:hover {
-  @include rotate-object(360deg);
+  @include rotate-object(180deg);
 }
 
 .rotate-computer {
@@ -186,12 +186,19 @@ input.form-control {
   margin-bottom: 15%;
 }
 
-#computer.active {
-  content: image-url('cloud.svg');
+#phone.active {
+  content: image-url('phone_selected.png');
+  height: 93%;
+  position: relative;
+  top: 0px;
+  @include rotate-object(360deg);
+
 }
 
-#phone.active, #watch.active {
-  content: image-url('cloud.svg');
+#watch.active {
+  content: image-url('selected_watch.png');
+  @include rotate-object(360deg);
+
 }
 
 .step > div {
