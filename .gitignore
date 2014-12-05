@@ -1,9 +1,9 @@
 # Ignore bundler config
 /.bundle
 app/bower_components/
-node_nodules/
+node_modules/
 # Ignore the build directory
-/build
+build/
 .idea/
 
 # Ignore cache

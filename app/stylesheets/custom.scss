@@ -248,3 +248,11 @@ input.form-control {
     margin-right: auto;
     display: block;
 }
+
+.social-media-links > ul {
+  list-style-type: none;
+  li {
+    display: inline-block;
+    margin-right: 2em;
+  }
+}

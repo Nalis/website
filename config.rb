@@ -96,14 +96,31 @@ configure :build do
   # set :http_prefix, "/Content/images/"
 end
 
-activate :deploy do |deploy|
-  deploy.method = :sftp
-  deploy.build_before = true # default: false
-  deploy.host   = 'nalisbg.com'
-  deploy.path   = '/www/perfectitcv.com/addon_domains/nalisbg.com/www/build'
-  # Optional Settings
-  deploy.user  = 'perfectitcv' # no default
-  # deploy.port  = 5309 # ssh port, default: 22
-  deploy.clean = true # remove orphaned files on remote host, default: false
-  # deploy.flags = '-rltgoDvzO --no-p --del' # add custom flags, default: -avz
+case ENV['TARGET'].to_s.downcase
+  when 'production'
+    activate :deploy do |deploy|
+      deploy.method = :sftp
+      deploy.build_before = true # default: false
+      # Optional Settings
+      deploy.user  = 'perfectitcv' # no default
+      # deploy.port  = 5309 # ssh port, default: 22
+      deploy.clean = true # remove orphaned files on remote host, default: false
+      # deploy.flags = '-rltgoDvzO --no-p --del' # add custom flags, default: -avz
+
+      deploy.host   = 'nalisbg.com'
+      deploy.path   = '/www/perfectitcv.com/addon_domains/nalisbg.com/www/build'
+    end
+  when 'staging'
+    activate :deploy do |deploy|
+      deploy.method = :sftp
+      deploy.build_before = true # default: false
+      # Optional Settings
+      deploy.user  = 'sites-dev' # no default
+      deploy.port  = 4040 # ssh port, default: 22
+      deploy.clean = true # remove orphaned files on remote host, default: false
+      # deploy.flags = '-rltgoDvzO --no-p --del' # add custom flags, default: -avz
+
+      deploy.host     = 'dev.nalisbg.com'
+      deploy.path     = '/web/sites-dev/nalisbg.com/build'
+    end
 end
