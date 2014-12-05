@@ -1,0 +1,58 @@
+%p
+  A small software development start-up company. We deliver SaaS for small businesses.
+  %ul
+    %li web apps
+    %li data scrapping
+    %li mobile apps
+    %li services integration
+%form{"data-ng-submit" => "submitForm(contactForm)"}
+  %strong.status{"ng-class" => "status_code", "ng-if" => "status"} {{status.message}}
+  %h1 Submit your request
+  .icons
+    %img#phone.rotate{"data-ng-class" => "{active: phone_active}", "data-ng-click" => "phone_active= !phone_active"}/
+    %img#watch.rotate{"data-ng-class" => "{active: watch_active}", "data-ng-click" => "watch_active= !watch_active"}/
+    %img#computer.rotate-computer{"data-ng-class" => "{active: computer_active}", "data-ng-click" => "computer_active = !computer_active"}/
+  .step
+    %div
+      %label{:for => "email_input"} Email
+      %input#email_input.form-control{"data-ng-model" => "contactForm.email", "data-remove-error-input" => "", "ng-class" => "{incorrect: errors.email}", :placeholder => "Email for contact", :type => "text"}
+    .main-business
+      %label{:for => "main_business_input"} Main business
+      %textarea#main_business_input.form-control{:cols => "50", "data-ng-model" => "contactForm.main_business", "data-remove-error-input" => "", "ng-class" => "{incorrect: errors.main_business}", :placeholder => "Write us about your business area", :rows => "2"}
+      / placeholder: We own Five Star Cleaning, an eco-friendly housekeeping service that pampers you and your home [what your business does].
+    .problem
+      %label{:for => "problem_input"} Problem you are facing
+      %textarea#problem_input.form-control{:cols => "50", "data-ng-model" => "contactForm.problem", "data-remove-error-input" => "", "ng-class" => "{incorrect: errors.problem}", :placeholder => "What is your typical workflow and what are the challenges you are facing, what do you want to improve?", :rows => "3"}
+      /
+        placeholder Typical cleaning services make you prep your home ahead of time, supervise to prevent theft and
+        hang around for hours while the cleaners do their work. Because we require no prep, this saves time right off the top,
+        and we are bonded so our service is worry-free, allowing you to go about your day [what problem does it solve]. And, we always send a minimum team of three to get the job done quickly [how it's different].
+        Imagine coming home from a long day and your laundry is all done, your bed has been turned down and there are fresh flowers awaiting you.
+        That's the extra pampering we offer that sets us apart from all the rest [why you should care]
+  .step
+    / <h2>Step 2</h2>
+    .idea
+      %label{:for => "basic_idea_input"} Your idea
+      %textarea#basic_idea_input.form-control{:cols => "50", "data-ng-model" => "contactForm.basic_idea", "data-remove-error-input" => "", "ng-class" => "{incorrect: errors.basic_idea}", :placeholder => "", :rows => "5"}
+  /
+    <div class="step">
+    <div class="field-item">
+    Technology preferences
+    <textarea cols="50" rows="3" class="form-control" placeholder=""></textarea>
+    </div>
+    </div>
+  /
+    <div class="step">
+    <h2>Step 3</h2>
+    <div class="summary">
+    <h2>My Business</h2>
+    <p>{{contactForm.client_main_business}}</p>
+    
+    <h2>Problem I am facing</h2>
+    <p>{{contactForm.client_problem}}</p>
+    
+    <h1>My idea</h1>
+    <small>Give more hints for the idea</small>
+    <p>{{contactForm.basic_idea}}</p>
+    </div>
+  %input#submit_contact_form.btn.btn-default{"ng-disabled" => "loading || successful", :type => "submit", :value => "Submit your idea"}

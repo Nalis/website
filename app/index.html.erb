@@ -11,7 +11,6 @@
 
   <%= stylesheet_link_tag "custom" %>
 
-
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
 
   <!--<script src="services/submit_contact_form_factory.js"></script>-->
@@ -26,11 +25,18 @@
     <br>
     Brings Innovation - Build Software for a better life
   </h1>
+
+  <nav class="layout">
+    <a ng-href="/">Home</a>
+    <a ng-href="#/technologies">Technologies</a>
+    <a ng-href="#/contacts">Contacts</a>
+    <a ng-href="#/about">About Us</a>
+  </nav>
 </header>
-<main ng-view>
+<main ng-view class="layout">
 
 </main>
-<footer>
+<footer class="layout">
   Copyright &copy; 2015
   <div class="social-media-links">
     <!-- Place this tag where you want the button to render. -->
