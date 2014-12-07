@@ -1,0 +1,63 @@
+$box-side: 17em;
+
+.box-style {
+//  border: 1px solid grey;
+  width: $box-side;
+  height: $box-side;
+  padding: 2em 1.5em 2em 3.5em;
+  background-color: #baffe9;
+  background-size: contain;
+}
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 69em;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2em;
+
+  > ul {
+    &:first-child {
+      margin-top: $box-side / 2;
+    }
+    &:nth-child(3) {
+      margin-top: $box-side / 2;
+    }
+    &:last-child {
+      margin-top: $box-side;
+    }
+    > li > * {
+      @extend .box-style;
+    }
+  }
+
+  .administration {
+    background-color: #01bed2;
+  }
+
+  .data {
+    background-color: #e54d5c;
+  }
+
+  .databases {
+    background-color: #E0E0E0;
+  }
+
+  .ruby {
+    background-color: #b30f00;
+  }
+
+  .java {
+    background-color: #73bf1a;
+  }
+
+  .web_frameworks {
+    background-color: #8fc550;
+  }
+
+  .web {
+    background-color: #e54d26;
+  }
+}
