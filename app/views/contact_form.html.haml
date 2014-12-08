@@ -14,8 +14,9 @@
     %img#computer.rotate-computer{"data-ng-class" => "{active: computer_active}", "data-ng-click" => "computer_active = !computer_active"}/
   .step
     %div
-      %label{:for => "email_input"} Email
-      %input#email_input.form-control{"data-ng-model" => "contactForm.email", "data-remove-error-input" => "", "ng-class" => "{incorrect: errors.email}", :placeholder => "Email for contact", :type => "text"}
+      %label{:for => "email_input"}='Email ' +  '&nbsp;&nbsp;'.html_safe;
+      %input#email_input.form-control{"data-ng-model" => "contactForm.email", "data-remove-error-input" => "", "style" => "display: inline-block",
+         "ng-class" => "{incorrect: errors.email}", :placeholder => "Email for contact", :type => "text"}
     .main-business
       %label{:for => "main_business_input"} Main business
       %textarea#main_business_input.form-control{:cols => "50", "data-ng-model" => "contactForm.main_business", "data-remove-error-input" => "", "ng-class" => "{incorrect: errors.main_business}", :placeholder => "Write us about your business area", :rows => "2"}
