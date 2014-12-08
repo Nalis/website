@@ -1,17 +1,22 @@
 %p
-  A small software development start-up company. We deliver SaaS for small businesses.
+  We are a small software development start-up company. We deliver SaaS for small businesses.
   %ul
     %li web apps
     %li data scrapping
     %li mobile apps
     %li system integration
+%p Please do not hesitate to contact us. Just fill out the form and we will give you feedback.
 %form{"data-ng-submit" => "submitForm(contactForm)"}
   %strong.status{"ng-class" => "status_code", "ng-if" => "status"} {{status.message}}
-  %h1 Submit your request
+  %br
+  %h1 Contact Us
   .icons
-    %img#phone.rotate{"data-ng-class" => "{active: phone_active}", "data-ng-click" => "phone_active= !phone_active"}/
-    %img#watch.rotate{"data-ng-class" => "{active: watch_active}", "data-ng-click" => "watch_active= !watch_active"}/
-    %img#computer.rotate-computer{"data-ng-class" => "{active: computer_active}", "data-ng-click" => "computer_active = !computer_active"}/
+    %img#phone.active{style: 'display:none'}/
+    %img#watch.active{style: 'display:none'}/
+    %img#computer.active{style: 'display:none'}/
+    %img#phone.rotate{"title" => "Optimized for mobile, Mobile App", "data-ng-class" => "{active: phone_active}", "data-ng-click" => "phone_active= !phone_active"}/
+    %img#watch.rotate{"title" => "Wearable", "data-ng-class" => "{active: watch_active}", "data-ng-click" => "watch_active= !watch_active"}/
+    %img#computer.rotate-computer{"title" => "Web App, Desktop", "data-ng-class" => "{active: computer_active}", "data-ng-click" => "computer_active = !computer_active"}/
   .step
     %div
       %label{:for => "email_input"}='Email ' +  '&nbsp;&nbsp;'.html_safe;
@@ -19,7 +24,7 @@
          "ng-class" => "{incorrect: errors.email}", :placeholder => "Email for contact", :type => "text"}
     .main-business
       %label{:for => "main_business_input"} Main business
-      %textarea#main_business_input.form-control{:cols => "50", "data-ng-model" => "contactForm.main_business", "data-remove-error-input" => "", "ng-class" => "{incorrect: errors.main_business}", :placeholder => "Write us about your business area", :rows => "2"}
+      %textarea#main_business_input.form-control{:cols => "50", "data-ng-model" => "contactForm.main_business", "data-remove-error-input" => "", "ng-class" => "{incorrect: errors.main_business}", :placeholder => "What's your business about?", :rows => "2"}
       / placeholder: We own Five Star Cleaning, an eco-friendly housekeeping service that pampers you and your home [what your business does].
     .problem
       %label{:for => "problem_input"} Problem you are facing

@@ -1,5 +1,13 @@
 @import 'bootstrap';
 
+@mixin rotate-object($deg) {
+  -webkit-transform: rotate($deg);
+  -moz-transform: rotate($deg);
+  -o-transform: rotate($deg);
+  -ms-transform: rotate($deg);
+  transform: rotate($deg);
+}
+
 input.incorrect, textarea.incorrect {
   border-color: rgba(82, 168, 236, 0.8);
   outline: 0;
@@ -110,7 +118,7 @@ footer {
 h1 {
   width: 100%;
   text-align: center;
-  margin-bottom: 5%;
+  margin-bottom: 1.5em;
 }
 
 label {
@@ -146,32 +154,47 @@ input {
   margin-top: 1em;
 }
 
-.step h2 {
-  /*background: url('Icons/cloud.svg');*/
-  background: url('images/cloud.svg') no-repeat;
-  color: #245783;
-  font-weight: 500;
+.icons {
+  display: inline-block;
   width: 100%;
+  margin-bottom: 1em;
+  > img {
+    margin-left: 15%;
+
+    &:first-child {
+      margin-left: 18%;
+    }
+
+    &:last-child {
+      margin-left: 13%;
+    }
+  }
 }
 
 #phone {
   content: image-url('phone.png');
-  margin-left: 10%;
-  position: relative;
-  top: -10px;
+  display: inline-block;
 }
 
 #watch {
   content: image-url('watch.png');
   display: inline-block;
-  margin-left: 20%;
+  padding: 0 1em;
+}
+
+#phone.active {
+  content: image-url('phone_selected.png');
+  @include rotate-object(360deg);
+}
+
+#watch.active {
+  content: image-url('selected_watch.png');
+  @include rotate-object(360deg);
 }
 
 #computer {
   display: inline-block;
   content: image-url('computer.png');
-  float: right;
-  margin-right: 5%;
 
   &.active {
     content: image-url('computer_selected.png');
@@ -184,14 +207,6 @@ input {
   -o-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
   transition: all 0.5s ease;
-}
-
-@mixin rotate-object($deg) {
-  -webkit-transform: rotate($deg);
-  -moz-transform: rotate($deg);
-  -o-transform: rotate($deg);
-  -ms-transform: rotate($deg);
-  transform: rotate($deg);
 }
 
 .rotate:hover {
@@ -210,6 +225,12 @@ input {
   }
 }
 
+.form-control, .btn {
+  border-radius: 3px;
+}
+h3 {
+  margin-bottom: 0.5em;
+}
 input.form-control {
   height: 20%;
   width: 60%;
@@ -225,26 +246,6 @@ input.form-control {
 
 .status.failed {
   color: red;
-}
-
-.icons {
-  display: inline-block;
-  width: 100%;
-  height: 145pt;
-  margin-bottom: 15%;
-}
-
-#phone.active {
-  content: image-url('phone_selected.png');
-  position: relative;
-  top: 0px;
-  @include rotate-object(360deg);
-}
-
-#watch.active {
-  content: image-url('selected_watch.png');
-  @include rotate-object(360deg);
-
 }
 
 .step > div {
