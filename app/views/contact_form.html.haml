@@ -1,10 +1,15 @@
-%p
+.home-page
   We are a small software development start-up company. We deliver SaaS for small businesses.
+  %br
+  %br
+  We deliver:
   %ul
     %li web apps
-    %li data scrapping
+    %li data scrapping services
     %li mobile apps
     %li system integration
+  %br
+
 %p Please do not hesitate to contact us. Just fill out the form and we will give you feedback.
 %form{"data-ng-submit" => "submitForm(contactForm)"}
   %strong.status{"ng-class" => "status_code", "ng-if" => "status"} {{status.message}}

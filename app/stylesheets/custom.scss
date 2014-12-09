@@ -26,7 +26,7 @@ input.incorrect, textarea.incorrect {
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0 0;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 ul {
@@ -113,7 +113,12 @@ footer {
 }
 
 .home-page {
-  margin: 2%;
+  ul {
+    padding-left: 2em;
+    > li {
+      list-style-type: disc;
+    }
+  }
 }
 h1 {
   width: 100%;
@@ -123,16 +128,16 @@ h1 {
 
 label {
   font-weight: 500;
-  font-size: 1.4em;
+  font-size: 1.1em;
 }
 
 textarea.form-control {
-  font-size: 1.2em;
+  font-size: 0.9em;
   height: auto;
 }
 
 input.form-control {
-  font-size: 1.2em;
+  font-size: 0.9em;
   height: auto;
 }
 
@@ -258,7 +263,7 @@ input.form-control {
 
 #submit_contact_form {
     margin-top: 2em;
-    font-size: 1.4em;
+    font-size: 1.2em;
     padding: 0.7em;
     text-align: center;
     margin-left: auto;
