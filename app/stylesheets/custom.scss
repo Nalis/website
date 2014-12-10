@@ -48,7 +48,7 @@ header {
   background-attachment: fixed;
   background-position: 57% 0%;
   background-color: #A6CDFD;
-  padding-top: 1em;
+  padding-top: 3.5em;
 
   h1 {
     font-size: 3.5em;
@@ -84,6 +84,10 @@ header {
         text-decoration: none;
       }
     }
+  }
+
+  div.layout {
+    padding: 0 4.3em;
   }
 }
 
@@ -283,6 +287,7 @@ input.form-control {
 }
 
 .choose-icons-desc {
+  padding-left: 10%;
   max-width: 56em;
   margin-left: auto;
   margin-right: auto;
