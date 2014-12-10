@@ -26,15 +26,15 @@
     %img#computer.rotate-computer{"title" => "Web App, Desktop", "data-ng-class" => "{active: computer_active}", "data-ng-click" => "computer_active = !computer_active"}/
   .step
     %div
-      %label{:for => "email_input"}='Email ' +  '&nbsp;&nbsp;'.html_safe;
+      %label#email_label{:for => "email_input"}='Email ' +  '&nbsp;&nbsp;'.html_safe;
       %input#email_input.form-control{"data-ng-model" => "contactForm.email", "data-remove-error-input" => "", "style" => "display: inline-block",
          "ng-class" => "{incorrect: errors.email}", :placeholder => "Email for contact", :type => "text"}
     .main-business
-      %label{:for => "main_business_input"} Main business
+      %label#main_business_label{:for => "main_business_input"} Main business
       %textarea#main_business_input.form-control{:cols => "50", "data-ng-model" => "contactForm.main_business", "data-remove-error-input" => "", "ng-class" => "{incorrect: errors.main_business}", :placeholder => "What's your business about?", :rows => "2"}
       / placeholder: We own Five Star Cleaning, an eco-friendly housekeeping service that pampers you and your home [what your business does].
     .problem
-      %label{:for => "problem_input"} Problem you are facing
+      %label#problem_label{:for => "problem_input"} Problem you are facing
       %textarea#problem_input.form-control{:cols => "50", "data-ng-model" => "contactForm.problem", "data-remove-error-input" => "", "ng-class" => "{incorrect: errors.problem}", :placeholder => "What is your typical workflow and what are the challenges you are facing, what do you want to improve?", :rows => "3"}
       /
         placeholder Typical cleaning services make you prep your home ahead of time, supervise to prevent theft and
@@ -45,7 +45,7 @@
   .step
     / <h2>Step 2</h2>
     .idea
-      %label{:for => "basic_idea_input"} Your idea
+      %label#basic_idea_label{:for => "basic_idea_input"} Your idea
       %textarea#basic_idea_input.form-control{:cols => "50", "data-ng-model" => "contactForm.basic_idea", "data-remove-error-input" => "", "ng-class" => "{incorrect: errors.basic_idea}", :placeholder => "", :rows => "5"}
   /
     <div class="step">
@@ -69,3 +69,7 @@
     <p>{{contactForm.basic_idea}}</p>
     </div>
   %input#submit_contact_form.btn.btn-default{"ng-disabled" => "loading || successful", :type => "submit", :value => "Submit your idea"}
+
+  -#%a{"data-ng-click" => "gotoAnchor('problem_input')"}
+  -#  Click http://guides.rubyonrails.org/asset_pipeline.html
+
