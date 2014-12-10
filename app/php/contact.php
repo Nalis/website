@@ -10,15 +10,14 @@ class Contact {
 
   public function validate() {
     $errors = array();
-
     foreach($this->mandatory_fields as $field) {
-      if(!isset($this->form_data[$field])) {
+      if($field == "email" && !empty($this->form_data['email'])) {
+        if(!isset($errors['email']) && (strlen($this->form_data['email']) > 60 || !preg_match('/.*@.*\..*/', $this->form_data['email']))) {
+          $errors[$field] = 'Invalid email';
+        }
+      } else if(empty($this->form_data[$field])) {
         $errors[$field] = "Please fill up the $field";
       }
-    }
-
-    if(!isset($errors['email']) && (strlen($this->form_data['email']) > 60 || !preg_match('/.*@.*\..*/', $this->form_data['email']))) {
-      $errors['email'] = 'Invalid email';
     }
 
     return $errors;
