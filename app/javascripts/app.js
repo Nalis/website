@@ -1,4 +1,4 @@
-angular.module('website', ['ngRoute']).
+angular.module('website', ['ngRoute', 'duScroll']).
     config(
     ['$routeProvider', function($routeProvider) {
       $routeProvider.
