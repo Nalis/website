@@ -19,6 +19,8 @@ $box-side: 17em;
   font-size: 0.9em;
 
   > ul {
+    display: inline-block;
+    vertical-align: top;
     &:first-child {
       margin-top: $box-side / 2;
     }
