@@ -176,34 +176,16 @@ input {
   }
 }
 
-#phone {
-  content: image-url('phone.png');
+#phone, #watch, #computer{
   display: inline-block;
 }
 
 #watch {
-  content: image-url('watch.png');
-  display: inline-block;
   padding: 0 1em;
 }
 
-#phone.active {
-  content: image-url('phone_selected.png');
+#phone.active, #watch.active {
   @include rotate-object(360deg);
-}
-
-#watch.active {
-  content: image-url('selected_watch.png');
-  @include rotate-object(360deg);
-}
-
-#computer {
-  display: inline-block;
-  content: image-url('computer.png');
-
-  &.active {
-    content: image-url('computer_selected.png');
-  }
 }
 
 .rotate {
