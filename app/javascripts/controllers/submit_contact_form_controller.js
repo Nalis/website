@@ -4,7 +4,7 @@ angular.module('website').
       $scope.contactForm = {};
       $scope.submitForm = submitForm;
       $scope.status = {};
-      var duration= 1500;
+      var duration= 1000;
       var offset= 30;
       var someElement;
 
