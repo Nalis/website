@@ -29,7 +29,7 @@ angular.module('website').
             } else if (result['status'] == 'ok') {
               $scope.status.code = result['status'];
               $scope.successful = true;
-              $scope.status.message = 'You request was sent successfully';
+              $scope.status.message = 'Thank you for your request. We will contact you soon';
             }
             $scope.converted = result;
             $scope.loading = false;
