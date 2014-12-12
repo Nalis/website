@@ -25,6 +25,9 @@ class Contact {
 
   public function mailText() {
     $mail = "Client email: {$this->form_data['email']}\n";
+    if(isset($this->form_data['phone'])) {
+      $mail .= "Client phone: {$this->form_data['phone']}\n";
+    }
     $mail .= $_SERVER['REMOTE_ADDR'] ."\n\n";
     $mail .= "Main business: {$this->form_data['main_business']}\n\n";
     $mail .= "Problem: {$this->form_data['problem']}\n\n";

@@ -1,0 +1,12 @@
+.choose-icons-desc
+  Choose the type of apps you want to develop
+%img#phone.active{style: 'display:none'}/
+%img#watch.active{style: 'display:none'}/
+%img#computer.active{style: 'display:none'}/
+.icons
+  %img#phone.rotate{"title" => "Optimized for mobile, Mobile App","data-ng-class" => "{active: phone_active}",
+    "data-ng-click" => "phone_active= !phone_active", "ng-src" => "{{phone_active ? '#{asset_path :images, 'phone_selected.png'}' : '#{asset_path :images, 'phone.png'}'}}"}
+  %img#watch.rotate{"title" => "Wearable", "data-ng-class" => "{active: watch_active}", "data-ng-click" => "watch_active= !watch_active",
+    "ng-src" => "{{watch_active ? '#{asset_path :images, 'watch_selected.png'}' : '#{asset_path :images, 'watch.png'}'}}"}
+  %img#computer.rotate-computer{"title" => "Web App, Desktop", "data-ng-class" => "{active: computer_active}", "data-ng-click" => "computer_active = !computer_active",
+    "ng-src" => "{{computer_active ? '#{asset_path :images, 'computer_selected.png'}' : '#{asset_path :images, 'computer.png'}'}}"}

@@ -11,34 +11,29 @@
   %br
 
 %p Please do not hesitate to contact us. Just fill out the form and we will give you feedback.
-%form{"data-ng-submit" => "submitForm(contactForm)"}
+%form.contact-form{"data-ng-submit" => "submitForm(contactForm)"}
   %strong.status{"ng-class" => "status_code", "ng-if" => "status"} {{status.message}}
   %br
   %h1 Contact Us
-  .choose-icons-desc
-    Choose the type of app you want to develop
-  .icons
-    %img#phone.active{style: 'display:none'}/
-    %img#watch.active{style: 'display:none'}/
-    %img#computer.active{style: 'display:none'}/
-    %img#phone.rotate{"title" => "Optimized for mobile, Mobile App","data-ng-class" => "{active: phone_active}",
-      "data-ng-click" => "phone_active= !phone_active", "ng-src" => "{{phone_active ? '#{asset_path :images, 'phone_selected.png'}' : '#{asset_path :images, 'phone.png'}'}}"}
-    %img#watch.rotate{"title" => "Wearable", "data-ng-class" => "{active: watch_active}", "data-ng-click" => "watch_active= !watch_active",
-      "ng-src" => "{{watch_active ? '#{asset_path :images, 'watch_selected.png'}' : '#{asset_path :images, 'watch.png'}'}}"}
-    %img#computer.rotate-computer{"title" => "Web App, Desktop", "data-ng-class" => "{active: computer_active}", "data-ng-click" => "computer_active = !computer_active",
-      "ng-src" => "{{computer_active ? '#{asset_path :images, 'computer_selected.png'}' : '#{asset_path :images, 'computer.png'}'}}"}
-  .step
+  .step.contact-boxes
     %div
-      %label#email_label{:for => "email_input"}='Email ' +  '&nbsp;&nbsp;'.html_safe;
+      -#%label#email_label{:for => "email_input"} Email*
       %input#email_input.form-control{"data-ng-model" => "contactForm.email", "data-remove-error-input" => "", "style" => "display: inline-block",
-         "ng-class" => "{incorrect: errors.email}", :placeholder => "Email for contact", :type => "text"}
+       "placeholder" => "Email *",  "ng-class" => "{incorrect: errors.email}", :type => "text"}
+      -#%label#email_label{:for => "phone_input"}='&nbsp;&nbsp;Phone'.html_safe
+      %span
+      %input#phone_input.form-control{"data-ng-model" => "contactForm.phone", "data-remove-error-input" => "", "style" => "display: inline-block",
+        "placeholder" => "Phone", :type => "text"}
+  .step
     .main-business
-      %label#main_business_label{:for => "main_business_input"} Main business
-      %textarea#main_business_input.form-control{:cols => "50", "data-ng-model" => "contactForm.main_business", "data-remove-error-input" => "", "ng-class" => "{incorrect: errors.main_business}", :placeholder => "What's your business about?", :rows => "2"}
+      %label#main_business_label{:for => "main_business_input"} Company, Department *
+      %textarea#main_business_input.form-control{:cols => "50", "data-ng-model" => "contactForm.main_business", "data-remove-error-input" => "", "ng-class" => "{incorrect: errors.main_business}",
+        :placeholder => "You can also write us a few words about your business if you'd like", :rows => "2"}
       / placeholder: We own Five Star Cleaning, an eco-friendly housekeeping service that pampers you and your home [what your business does].
     .problem
-      %label#problem_label{:for => "problem_input"} Problem you are facing
-      %textarea#problem_input.form-control{:cols => "50", "data-ng-model" => "contactForm.problem", "data-remove-error-input" => "", "ng-class" => "{incorrect: errors.problem}", :placeholder => "What is your typical workflow and what are the challenges you are facing, what do you want to improve?", :rows => "3"}
+      %label#problem_label{:for => "problem_input"} Problem you are facing *
+      %textarea#problem_input.form-control{:cols => "50", "data-ng-model" => "contactForm.problem", "data-remove-error-input" => "", "ng-class" => "{incorrect: errors.problem}",
+         :placeholder => "What is your typical workflow?\nWhat are the problems you are facing on daily basis?", :rows => "3"}
       /
         placeholder Typical cleaning services make you prep your home ahead of time, supervise to prevent theft and
         hang around for hours while the cleaners do their work. Because we require no prep, this saves time right off the top,
@@ -46,33 +41,15 @@
         Imagine coming home from a long day and your laundry is all done, your bed has been turned down and there are fresh flowers awaiting you.
         That's the extra pampering we offer that sets us apart from all the rest [why you should care]
   .step
-    / <h2>Step 2</h2>
-    .idea
-      %label#basic_idea_label{:for => "basic_idea_input"} Your idea
-      %textarea#basic_idea_input.form-control{:cols => "50", "data-ng-model" => "contactForm.basic_idea", "data-remove-error-input" => "", "ng-class" => "{incorrect: errors.basic_idea}", :placeholder => "", :rows => "5"}
-  /
-    <div class="step">
-    <div class="field-item">
-    Technology preferences
-    <textarea cols="50" rows="3" class="form-control" placeholder=""></textarea>
-    </div>
-    </div>
-  /
-    <div class="step">
-    <h2>Step 3</h2>
-    <div class="summary">
-    <h2>My Business</h2>
-    <p>{{contactForm.client_main_business}}</p>
-    
-    <h2>Problem I am facing</h2>
-    <p>{{contactForm.client_problem}}</p>
-    
-    <h1>My idea</h1>
-    <small>Give more hints for the idea</small>
-    <p>{{contactForm.basic_idea}}</p>
-    </div>
-  %input#submit_contact_form.btn.btn-default{"ng-disabled" => "loading || successful", :type => "submit", :value => "Submit your idea"}
 
-  -#%a{"data-ng-click" => "gotoAnchor('problem_input')"}
-  -#  Click http://guides.rubyonrails.org/asset_pipeline.html
+    / <h2>Step 2</h2>
+    = # partial 'contact_form_app_type'
+    .idea
+      %label#basic_idea_label{:for => "basic_idea_input"} Your idea *
+      %textarea#basic_idea_input.form-control{:cols => "50", "data-ng-model" => "contactForm.basic_idea", "data-remove-error-input" => "", "ng-class" => "{incorrect: errors.basic_idea}",
+        :placeholder => "Expand your idea. List the things you want to develop", :rows => "7"}
+      - # The icons could blink appear on this step 'contact_form_app_type'
+
+  %input#submit_contact_form.btn.btn-default{"ng-disabled" => "loading || successful", :type => "submit", :value => "Submit"}
+
 
