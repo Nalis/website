@@ -10,30 +10,29 @@
     %li system integration
   %br
 
-%p Please do not hesitate to contact us. Just fill out the form and we will give you feedback.
+%p Please do not hesitate to contact us. Just drop us a line and we will give you feedback.
 %form.contact-form{"data-ng-submit" => "submitForm(contactForm)"}
   %strong.status{"ng-class" => "status_code", "ng-if" => "status"} {{status.message}}
   %br
   %h1 Contact Us
   .step.contact-boxes
     %div
-      -#%label#email_label{:for => "email_input"} Email*
+      %label#email_label{:for => "email_input"}Email *
       %input#email_input.form-control{"data-ng-model" => "contactForm.email", "data-remove-error-input" => "", "style" => "display: inline-block",
-       "placeholder" => "Email *",  "ng-class" => "{incorrect: errors.email}", :type => "text"}
-      -#%label#email_label{:for => "phone_input"}='&nbsp;&nbsp;Phone'.html_safe
-      %span
+       "placeholder" => "",  "ng-class" => "{incorrect: errors.email}", :type => "text"}
+      %label#email_label{:for => "phone_input"}='&nbsp;&nbsp;Phone'.html_safe
       %input#phone_input.form-control{"data-ng-model" => "contactForm.phone", "data-remove-error-input" => "", "style" => "display: inline-block",
-        "placeholder" => "Phone", :type => "text"}
+        "placeholder" => "", :type => "text"}
   .step
     .main-business
-      %label#main_business_label{:for => "main_business_input"} Company, Department *
+      %label#main_business_label{:for => "main_business_input"} Company *
       %textarea#main_business_input.form-control{:cols => "50", "data-ng-model" => "contactForm.main_business", "data-remove-error-input" => "", "ng-class" => "{incorrect: errors.main_business}",
-        :placeholder => "You can also write us a few words about your business if you'd like", :rows => "2"}
+        :rows => "2"}
       / placeholder: We own Five Star Cleaning, an eco-friendly housekeeping service that pampers you and your home [what your business does].
-    .problem
-      %label#problem_label{:for => "problem_input"} Problem you are facing *
-      %textarea#problem_input.form-control{:cols => "50", "data-ng-model" => "contactForm.problem", "data-remove-error-input" => "", "ng-class" => "{incorrect: errors.problem}",
-         :placeholder => "What is your typical workflow?\nWhat are the problems you are facing on daily basis?", :rows => "3"}
+    -#.problem
+    -#  %label#problem_label{:for => "problem_input"} Problem you are facing *
+    -#  %textarea#problem_input.form-control{:cols => "50", "data-ng-model" => "contactForm.problem", "data-remove-error-input" => "", "ng-class" => "{incorrect: errors.problem}",
+    -#     :placeholder => "What is your typical workflow?\nWhat are the problems you are facing on daily basis?", :rows => "3"}
       /
         placeholder Typical cleaning services make you prep your home ahead of time, supervise to prevent theft and
         hang around for hours while the cleaners do their work. Because we require no prep, this saves time right off the top,
@@ -45,9 +44,9 @@
     / <h2>Step 2</h2>
     = # partial 'contact_form_app_type'
     .idea
-      %label#basic_idea_label{:for => "basic_idea_input"} Your idea *
+      %label#basic_idea_label{:for => "basic_idea_input"} Request *
       %textarea#basic_idea_input.form-control{:cols => "50", "data-ng-model" => "contactForm.basic_idea", "data-remove-error-input" => "", "ng-class" => "{incorrect: errors.basic_idea}",
-        :placeholder => "Expand your idea. List the things you want to develop", :rows => "7"}
+        :rows => "7"}
       - # The icons could blink appear on this step 'contact_form_app_type'
 
   %input#submit_contact_form.btn.btn-default{"ng-disabled" => "loading || successful", :type => "submit", :value => "Submit"}

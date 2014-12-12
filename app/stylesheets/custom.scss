@@ -154,7 +154,8 @@ input {
 }
 
 .contact-form h1 {
-  margin-bottom: 0;
+  margin-bottom: 0.5em;
+  text-align: center;
 }
 
 .step {
@@ -162,7 +163,10 @@ input {
   text-align: center;
   color: #000;
   font-weight: 400;
-  padding-top: 2em;
+
+  &:first-child {
+    padding-top: 2em;
+  }
 
   > div {
     padding-top: 0.9em;
@@ -173,21 +177,22 @@ input {
   }
 
   &.contact-boxes {
-    display: table;
-    > div {
-      display: table-row;
-      > * {
-        display: table-cell;
-      }
+    label {
+      margin-top: 0.5em;
+      margin-bottom: 0.25em;
+    }
 
-      .form-control {
-        width: 94%;
-        height: auto;
-      }
+    > * {
+      display: block;
+    }
 
-      label {
-        width: 4%;
-        padding-left: 0.9em;
+    .form-control {
+      width: 100%;
+      height: auto;
+      text-align: center;
+
+      &:first-child {
+        margin-top: 0;
       }
     }
   }

@@ -1,7 +1,7 @@
 <?php
 
 class Contact {
-  private $mandatory_fields = ['email', 'main_business', 'problem', 'basic_idea'];
+  private $mandatory_fields = ['email', 'main_business', 'basic_idea'];
 
   public function Contact($form) {
     $this->internalValidation($form);
