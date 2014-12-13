@@ -1,8 +1,10 @@
-<!DOCTYPE html>
+<?php
+include_once 'seo.php';
+?><!DOCTYPE html>
 <html data-ng-app="website">
-
 <head>
   <meta charset="utf-8">
+  <meta name="fragment" content="!">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="icon" href="logo_32x32.png">
   <title>Developing Ideas - Web Apps, SaaS, System Integration</title>
@@ -10,7 +12,7 @@
 
   <%= stylesheet_link_tag "custom" %>
 
-  <link href='http://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -27,14 +29,14 @@
     </h1>
   </div>
   <nav class="layout">
-    <a ng-href="#/">Home</a>
-    <a ng-href="#/technologies">Technologies</a>
-    <a ng-href="#/contacts">Contacts</a>
-    <a ng-href="#/about">About Us</a>
+    <a ng-href="#!/">Home</a>
+    <a ng-href="#!/technologies">Technologies</a>
+    <a ng-href="#!/contacts">Contacts</a>
+    <a ng-href="#!/about">About Us</a>
   </nav>
 </header>
 <main ng-view class="layout">
-
+<%= partial 'views/contact_form' %>
 </main>
 <footer>
   <div class="layout">
