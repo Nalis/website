@@ -31,28 +31,35 @@ include_once 'seo.php';
   <nav class="layout">
     <a ng-href="#!/">Home</a>
     <a ng-href="#!/technologies">Technologies</a>
+    <a ng-href="#!/open-source">Open Source</a>
     <a ng-href="#!/contacts">Contacts</a>
     <a ng-href="#!/about">About Us</a>
   </nav>
 </header>
-<main ng-view class="layout">
-<%= partial 'views/contact_form' %>
+<main  class="layout">
+  <%= partial 'views/top_page' %>
+  <%= partial 'views/technologies.html' %>
+  <%= partial 'views/open-source' %>
+  <%= partial 'views/about' %>
+  <%= partial 'views/contact_form' %>
 </main>
 <footer>
   <div class="layout">
-
-  <div class="social-media-links">
-    <!-- Place this tag where you want the button to render. -->
-    <ul>
-      <li><div class="g-plusone" data-annotation="inline" data-width="220"></div></li>
-      <li>
-        <script type="IN/FollowCompany" data-id="9202360" data-counter="none"></script>
-      </li>
-      <li>
-        <div class="fb-like" data-href="https://www.nalisbg.com" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-      </li>
-    </ul>
-  </div>
+    <div class="footer-content">
+      <div class="social-media-links">
+        <!-- Place this tag where you want the button to render. -->
+        <ul>
+          <li><div class="g-plusone" data-annotation="inline" data-width="220"></div></li>
+          <li>
+            <script type="IN/FollowCompany" data-id="9202360" data-counter="none"></script>
+          </li>
+          <li>
+            <div class="fb-like" data-href="https://www.nalisbg.com" data-layout="standard" data-action="like" data-show-faces="true" data-share="true" data-width="292"></div>
+          </li>
+        </ul>
+      </div>
+      <%= partial 'views/contacts' %>
+    </div>
   </div>
   Copyright &copy; 2015
 </footer>

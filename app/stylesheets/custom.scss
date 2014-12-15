@@ -112,8 +112,9 @@ body > main {
 
 footer {
   text-align: center;
+  font-size: 0.8em;
   padding: 1em;
-  background-color: rgba(217, 240, 254, 0.27);
+  background-color: rgb(217, 240, 254);
 }
 
 .home-page {
@@ -224,6 +225,7 @@ input {
 
 #phone, #watch, #computer{
   display: inline-block;
+  margin-left: 7em;
 }
 
 #watch {
@@ -294,16 +296,27 @@ input.form-control {
     display: block;
 }
 
-.social-media-links > ul {
-  list-style-type: none;
-  max-width: 60em;
-  margin-left: auto;
-  margin-right: auto;
-  li {
-    display: inline-block;
-    margin-right: 2em;
+.social-media-links {
+  width: 49%;
+  display: inline-block;
+  > ul {
+    list-style-type: none;
+    max-width: 60em;
+    margin-left: auto;
+    margin-right: auto;
+    li {
+      margin-right: 2em;
+      text-align: right;
+    }
   }
 }
 
+.contacts {
+  display: inline-block;
+  width: 50%;
+  text-align: left;
+}
+
 @import 'technologies';
+@import 'open-source';
 @import 'responsive';
