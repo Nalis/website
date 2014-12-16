@@ -1,0 +1,19 @@
+#services {
+  .layout {
+    min-height: 20em;
+  }
+  background-image: image-url('sprong1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  h1 {
+    margin-bottom: 1em;
+  }
+
+  ul {
+    padding-left: 1em;
+    li {
+      list-style-type: disc;
+    }
+  }
+}

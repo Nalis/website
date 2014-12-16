@@ -1,10 +1,14 @@
-.contact-form{'data-ng-controller' => 'SubmitContactFormController'}
-  %h1#contact_form Contact Us
+.contact-form.layout#contact_form{'data-ng-controller' => 'SubmitContactFormController'}
+  %p
+    You have an idea and you need a quote
+    %br
+    Please do not hesitate to contact us. Just fill out the form and we'll get back to you.
+  %h1 Contact Us
   %form.contact-form{"data-ng-submit" => "submitForm(contactForm)"}
     %strong.status{"ng-class" => "status_code", "ng-if" => "status"} {{status.message}}
     .step.contact-boxes
       %div
-        -#%label#email_label{:for => "email_input"} Email*
+        %label#email_label{:style => '', :for => "email_input"}
         %input#email_input.form-control{"data-ng-model" => "contactForm.email", "data-remove-error-input" => "", "style" => "display: inline-block",
          "placeholder" => "Email *",  "ng-class" => "{incorrect: errors.email}", :type => "text"}
         -#%label#email_label{:for => "phone_input"}='&nbsp;&nbsp;Phone'.html_safe
@@ -18,7 +22,7 @@
           :rows => "2"}
         / placeholder: We own Five Star Cleaning, an eco-friendly housekeeping service that pampers you and your home [what your business does].
       .problem
-        %label#problem_label{:for => "problem_input"} Problem you are facing *
+        %label#problem_label{:for => "problem_input"} Problem you are facing
         %textarea#problem_input.form-control{:cols => "50", "data-ng-model" => "contactForm.problem", "data-remove-error-input" => "", "ng-class" => "{incorrect: errors.problem}",
            :placeholder => "What is your typical workflow?\nWhat are the problems you are facing on daily basis?", :rows => "3"}
         /

@@ -1,6 +1,4 @@
-<?php
-include_once 'seo.php';
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html data-ng-app="website" data-scroll>
 <head>
   <meta charset="utf-8">
@@ -34,15 +32,17 @@ include_once 'seo.php';
       </a><a ng-click="scrollTo('technologies')" href="#technologies">Technologies
       </a><a ng-click="scrollTo('experience')" href="#experience">Experience
       </a><a ng-click="scrollTo('open_source')" href="#open_source">Open Source
-      </a><a ng-click="scrollTo('contact_form')" href="#contact_form">Contacts
+      </a><a ng-click="scrollTo('contact_form')" href="#contact_form">Contact Us
       </a><a ng-click="scrollTo('about')" href="#about">About Us</a>
     </nav>
   </div>
 </header>
 <main>
-  <div class="layout">
+  <div>
     <%= partial 'views/top_page' %>
+    <%= partial 'views/services' %>
     <%= partial 'views/technologies.html' %>
+    <%= partial 'views/experience.html' %>
     <%= partial 'views/open-source' %>
     <%= partial 'views/about' %>
     <%= partial 'views/contact_form' %>
