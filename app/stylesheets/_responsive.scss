@@ -1,6 +1,24 @@
+@media(max-width: 1380px) {
+  #phone, #watch, #computer {
+    height: 80%;
+  }
+}
+
 @media (max-width: 1300px) {
   .layout {
     width: 100%;
+  }
+  .step .icons {
+    height: 200px;
+  }
+}
+
+@media (max-width: 1200px){
+  .step .icons {
+    height: 180px;
+  }
+  #phone, #watch, #computer {
+    height: 80%;
   }
 }
 
@@ -9,6 +27,39 @@
     width: 100%;
     padding-left: 1%;
     padding-right: 1%;
+  }
+  #phone, #watch, #computer {
+    height: 80%;
+  }
+  .step .icons {
+    height: 160px;
+  }
+}
+
+@media (max-width: 950px) {
+  .step .icons {
+    height: 140px;
+  }
+}
+
+@media (max-width: 900px) {
+  .step .icons {
+    height: 120px;
+  }
+}
+
+@media (max-width: 550px) {
+  #phone, #watch, #computer {
+    height: 70%;
+  }
+  .step .icons {
+    height: 100px;
+  }
+}
+
+@media (max-width: 450px) {
+  .step .icons {
+   height: 80px;
   }
 }
 

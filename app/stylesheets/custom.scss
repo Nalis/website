@@ -280,13 +280,19 @@ input {
   margin-top: 1em;
 }
 
-#phone, #watch, #computer{
+#phone{
   display: inline-block;
-  margin-left: 7em;
 }
 
 #watch {
   padding: 0 1em;
+  float: left;
+  margin-left: 10%;
+}
+
+#computer {
+  margin-right: 10%;
+  float: right;
 }
 
 #phone.active, #watch.active {
