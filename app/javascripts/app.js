@@ -1,7 +1,7 @@
-angular.module('website', ['ngRoute', 'duScroll']).
-    config(
-    ['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-      $locationProvider.hashPrefix('!');
+angular.module('website', ['duScroll']);
+    //config(
+    //['$locationProvider', '$routeProvider', function($rootScope, $routeProvider) {
+      //$locationProvider.hashPrefix('!');
 /*
       $routeProvider.
           when('/', {
@@ -21,5 +21,4 @@ angular.module('website', ['ngRoute', 'duScroll']).
             templateUrl: 'views/technologies.html'
           });
           */
-    }]);
-
+    //}]);

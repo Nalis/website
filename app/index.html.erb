@@ -1,23 +1,22 @@
 <?php
 include_once 'seo.php';
 ?><!DOCTYPE html>
-<html data-ng-app="website">
+<html data-ng-app="website" data-scroll>
 <head>
   <meta charset="utf-8">
-  <meta name="fragment" content="!">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="icon" href="logo_32x32.png">
-  <title>Developing Ideas - Web Apps, SaaS, System Integration</title>
+  <title>Developing Ideas - Web Apps, SaaS, Software as a Service, System Integration</title>
   <meta name="keywords" content="SaaS, IT services, java, android, ruby, rails, javascript, angularjs, ember.js, Valentin Aitken, Валентин Ейткен" />
 
   <%= stylesheet_link_tag "custom" %>
 
-  <link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
 <div id="fb-root"></div>
-<header>
+<header data-ng-controller="HeaderController">
   <div class="layout">
     <a href="/">
     <h1 class="nalis">
@@ -28,40 +27,35 @@ include_once 'seo.php';
       Brings Innovation - Build Software for a better life
     </h1>
   </div>
-  <nav class="layout">
-    <a ng-href="#!/">Home</a>
-    <a ng-href="#!/technologies">Technologies</a>
-    <a ng-href="#!/open-source">Open Source</a>
-    <a ng-href="#!/contacts">Contacts</a>
-    <a ng-href="#!/about">About Us</a>
-  </nav>
+  <div class="nav-container" id="header_navigation">
+    <nav class="layout" >
+      <a href="#">Home
+      </a><a ng-click="scrollTo('services')" href="#services">Services
+      </a><a ng-click="scrollTo('technologies')" href="#technologies">Technologies
+      </a><a ng-click="scrollTo('experience')" href="#experience">Experience
+      </a><a ng-click="scrollTo('open_source')" href="#open_source">Open Source
+      </a><a ng-click="scrollTo('contact_form')" href="#contact_form">Contacts
+      </a><a ng-click="scrollTo('about')" href="#about">About Us</a>
+    </nav>
+  </div>
 </header>
-<main  class="layout">
-  <%= partial 'views/top_page' %>
-  <%= partial 'views/technologies.html' %>
-  <%= partial 'views/open-source' %>
-  <%= partial 'views/about' %>
-  <%= partial 'views/contact_form' %>
+<main>
+  <div class="layout">
+    <%= partial 'views/top_page' %>
+    <%= partial 'views/technologies.html' %>
+    <%= partial 'views/open-source' %>
+    <%= partial 'views/about' %>
+    <%= partial 'views/contact_form' %>
+  </div>
 </main>
 <footer>
   <div class="layout">
     <div class="footer-content">
-      <div class="social-media-links">
-        <!-- Place this tag where you want the button to render. -->
-        <ul>
-          <li><div class="g-plusone" data-annotation="inline" data-width="220"></div></li>
-          <li>
-            <script type="IN/FollowCompany" data-id="9202360" data-counter="none"></script>
-          </li>
-          <li>
-            <div class="fb-like" data-href="https://www.nalisbg.com" data-layout="standard" data-action="like" data-show-faces="true" data-share="true" data-width="292"></div>
-          </li>
-        </ul>
-      </div>
       <%= partial 'views/contacts' %>
+      <%= partial 'views/social_media' %>
     </div>
   </div>
-  Copyright &copy; 2015
+  <span class="copyright">Copyright &copy; 2015</span>
 </footer>
 <!-- Include scripts -->
 <script src="https://apis.google.com/js/platform.js" async defer></script>

@@ -1,6 +1,6 @@
 angular.module('website').
-    controller('SubmitContactFormController', ['$scope', 'submit_contact_form_factory', '$location', '$document',
-      function($scope, submit_contact_form_factory, $location, $document) {
+    controller('SubmitContactFormController', ['$scope', 'submit_contact_form_factory', '$document',
+      function($scope, submit_contact_form_factory, $document) {
       $scope.contactForm = {};
       $scope.submitForm = submitForm;
       $scope.status = {};
@@ -47,11 +47,11 @@ angular.module('website').
 
       function gotoAnchor(x) {
         var newHash = x;
-        if ($location.hash() !== newHash) {
-          $location.hash(x);
-        } else {
+        //if ($location.hash() !== newHash) {
+        //  $location.hash(x);
+        //} else {
           $anchorScroll();
-        }
+//        }
       }
     }]);
 

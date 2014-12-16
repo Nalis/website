@@ -65,23 +65,71 @@ header {
     text-decoration: none;
   }
 
-  nav {
-    a {
-      display: inline-block;
-      color: #F3FFD5;
-      background-color: rgba(72,61,68,0.3);
-      font-size: 1.2em;
-      font-weight: 500;
-      padding: 1.17em 2em;
-      text-decoration: none;
+  .nav-container {
 
-      &.selected {
-        background-color: darken(#fff, 10%);
-      }
-      &:hover, &:focus {
-        background-color: darken(#fff, 6%);
-        color: #2E5A82;
+
+    nav {
+      margin-left: auto;
+      margin-right: auto;
+
+      width: 73.7em;
+
+      a {
+        display: inline-block;
+        color: #F3FFD5;
+        background-color: rgba(72,61,68,0.5);
+        font-size: 1.2em;
+        font-weight: 500;
+        padding: 1.17em 2em;
         text-decoration: none;
+
+        &.selected {
+          background-color: darken(#fff, 10%);
+        }
+        &:hover, &:focus {
+          background-color: darken(#fff, 6%);
+          color: #2E5A82;
+          text-decoration: none;
+
+          box-shadow: 0px 10px 0px 0px #D2E0D8 inset;
+        }
+      }
+
+
+    }
+
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+
+    &.fixed {
+      position: fixed;
+      top: 0;
+      background: #80ABF1;
+      width: 100%;
+      border-bottom: 0.15em solid #082076;
+
+      nav {
+        width: 71em;
+
+        a {
+          font-size: 1.1em;
+          padding: 0.25em 2em;
+
+          &:hover {
+            box-shadow: 0px 5px 0px 0px #D2E0D8 inset;
+          }
+
+          &:first-child {
+            padding-left: 1em;
+          }
+
+          &:last-child {
+            padding-right: 1em;
+          }
+        }
       }
     }
   }
@@ -95,11 +143,7 @@ h1 {
   margin-top: 0;
 }
 
-body > main {
-  width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-
+body > main .layout {
   padding: 3em 4em;
   background-color: rgba(243, 255, 213, 0.48);
 }
@@ -113,8 +157,16 @@ body > main {
 footer {
   text-align: center;
   font-size: 0.8em;
-  padding: 1em;
+  padding: 1em 0em 0.5em;
   background-color: rgb(217, 240, 254);
+}
+
+.footer-content > * {
+  vertical-align: top;
+}
+
+.copyright {
+  font-size: 0.8em;
 }
 
 .home-page {
@@ -299,14 +351,10 @@ input.form-control {
 .social-media-links {
   width: 49%;
   display: inline-block;
-  > ul {
-    list-style-type: none;
-    max-width: 60em;
-    margin-left: auto;
-    margin-right: auto;
-    li {
-      margin-right: 2em;
-      text-align: right;
+  table {
+    text-align: left;
+    td {
+      vertical-align: top;
     }
   }
 }
@@ -315,6 +363,13 @@ input.form-control {
   display: inline-block;
   width: 50%;
   text-align: left;
+
+  address {
+    display: inline-block;
+    vertical-align: top;
+    font-style: normal;
+    margin-right: 1em;
+  }
 }
 
 @import 'technologies';
