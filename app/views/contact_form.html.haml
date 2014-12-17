@@ -6,6 +6,8 @@
   %h1 Contact Us
   %form.contact-form{"data-ng-submit" => "submitForm(contactForm)"}
     %strong.status{"ng-class" => "status_code", "ng-if" => "status"} {{status.message}}
+    .step
+      = partial 'views/contact_form_app_type'
     .step.contact-boxes
       %div
         %label#email_label{:style => '', :for => "email_input"}
@@ -36,7 +38,6 @@
       / <h2>Step 2</h2>
       .idea
         %label#basic_idea_label{:for => "basic_idea_input"} Your idea *
-        = partial 'views/contact_form_app_type'
         %textarea#basic_idea_input.form-control{:cols => "50", "data-ng-model" => "contactForm.basic_idea", "data-remove-error-input" => "", "ng-class" => "{incorrect: errors.basic_idea}",
           :placeholder => "Expand your idea. List the things you want to develop", :rows => "7"}
         - # The icons could blink appear on this step 'contact_form_app_type'
