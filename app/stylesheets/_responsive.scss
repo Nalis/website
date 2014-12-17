@@ -1,3 +1,9 @@
+@media (max-width: 1410px) {
+  header .nav-container nav a {
+    padding: 1em 1.3em;
+  }
+}
+
 @media(max-width: 1380px) {
   #phone, #watch, #computer {
     height: 80%;
@@ -20,6 +26,15 @@
   #phone, #watch, #computer {
     height: 80%;
   }
+  header .nav-container nav a {
+    padding: 1em 0.8em;
+  }
+}
+
+@media (max-width: 1020px) {
+  header .nav-container nav a {
+    padding: 1em 0.5em;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -40,11 +55,17 @@
   .step .icons {
     height: 140px;
   }
+  header .nav-container nav a {
+    padding: 1em 0.4em;
+  }
 }
 
 @media (max-width: 900px) {
   .step .icons {
     height: 120px;
+  }
+  header .nav-container nav a {
+    padding: 1em 0.3em;
   }
 }
 
