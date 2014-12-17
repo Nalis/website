@@ -219,11 +219,14 @@ input {
   text-align: center;
 }
 
-.home-page .description {
-  display: inline-block;
-  width: 49%;
-  vertical-align: top;
-  padding-right: 2em;
+.home-page {
+  font-weight: 500;
+  .description {
+    display: inline-block;
+    width: 49%;
+    vertical-align: top;
+    padding-right: 2em;
+  }
 }
 
 .step {
