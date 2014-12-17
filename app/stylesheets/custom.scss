@@ -65,11 +65,7 @@ header {
     text-decoration: none;
   }
 
-  .nav-toggle {
-    background-color: grey;
-  }
-
-  .navbar {
+  .nav-container {
 
     .navbar-toggle {
       background-color: grey;
@@ -144,6 +140,41 @@ header {
             padding-right: 1em;
           }
           */
+        }
+      }
+    }
+
+    @media (min-width: 768px) {
+      /* line 1809, /home/slavunder/workspace/website/app/stylesheets/bootstrap.css */
+      .navbar-toggle {
+        display: block; } }
+
+    $our-mobile-menu-max-width: 868px;
+    @media (min-width: $our-mobile-menu-max-width) {
+      .navbar-toggle {
+        display: none;
+      }
+    }
+
+
+    @media (max-width: $our-mobile-menu-max-width) {
+      nav {
+        a {
+          display: none;
+        }
+      }
+
+    }
+
+    /* line 1813, /home/slavunder/workspace/website/app/stylesheets/bootstrap.css */
+    .navbar-nav {
+      margin: 7.5px -15px; }
+
+    &.in {
+      nav {
+
+        a {
+          display: block;
         }
       }
     }
