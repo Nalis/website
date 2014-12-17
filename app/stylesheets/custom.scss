@@ -65,7 +65,15 @@ header {
     text-decoration: none;
   }
 
-  .nav-container {
+  .nav-toggle {
+    background-color: grey;
+  }
+
+  .navbar {
+
+    .navbar-toggle {
+      background-color: grey;
+    }
 
 
     nav {

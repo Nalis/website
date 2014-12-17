@@ -1,4 +1,4 @@
-angular.module('website', ['duScroll']);
+angular.module('website', ['duScroll', 'ui.bootstrap']);
     //config(
     //['$locationProvider', '$routeProvider', function($rootScope, $routeProvider) {
       //$locationProvider.hashPrefix('!');
