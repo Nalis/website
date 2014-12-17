@@ -7,17 +7,17 @@ angular.module('website').
             var header_nav, header;
             header_nav = angular.element(document.getElementById('header_navigation'));
             header = angular.element(element.find("header"));
-                console.log(header[0].offsetHeight);
+                //console.log(header[0].offsetHeight);
             if (this.pageYOffset >= header[0].offsetHeight - 50) {
 
               scope.slimHeader = true;
               header_nav.addClass('fixed');
-              console.log('Scrolled below header.');
+              //console.log('Scrolled below header.');
 
             } else {
               scope.slimHeader = false;
               header_nav.removeClass('fixed');
-              console.log('Header is in view.');
+              //console.log('Header is in view.');
             }
             scope.$apply();
           });
