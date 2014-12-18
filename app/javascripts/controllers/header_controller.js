@@ -7,6 +7,6 @@ angular.module('website').
         function scrollTo(element_id) { // Check whether $scope is necessary here
           var someElement;
           someElement = angular.element(document.getElementById(element_id));
-          $document.scrollToElement(someElement, offset, duration);
+          $document.scrollTopAnimated(someElement);
         }
       }]);
