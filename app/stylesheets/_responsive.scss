@@ -13,7 +13,16 @@
 @media (max-width: 1300px) {
   .layout {
     width: 100%;
+    margin: 0;
   }
+
+  body > main {
+    .layout {
+      padding-left: 1.5em;
+      padding-right: 1em
+    }
+  }
+
   .step .icons {
     height: 200px;
   }
@@ -38,11 +47,6 @@
 }
 
 @media (max-width: 1000px) {
-  body > main {
-    width: 100%;
-    padding-left: 1%;
-    padding-right: 1%;
-  }
   #phone, #watch, #computer {
     height: 80%;
   }
@@ -55,17 +59,11 @@
   .step .icons {
     height: 140px;
   }
-  header .nav-container nav a {
-    padding: 1em 0.4em;
-  }
 }
 
 @media (max-width: 900px) {
   .step .icons {
     height: 120px;
-  }
-  header .nav-container nav a {
-    padding: 1em 0.3em;
   }
 }
 

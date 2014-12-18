@@ -5,7 +5,7 @@ angular.module('website').
       $scope.submitForm = submitForm;
       $scope.status = {};
       var duration= 1000;
-      var offset= 30;
+      var offset= 100;
       var someElement;
 
 

@@ -12,6 +12,12 @@ angular.module('website').
 
               scope.slimHeader = true;
               header_nav.addClass('fixed');
+
+              if(!scope['isCollapsed']) {
+                scope['isCollapsed'] = true;
+                scope.$apply();
+              }
+
               //console.log('Scrolled below header.');
 
             } else {
