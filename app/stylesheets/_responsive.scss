@@ -114,3 +114,22 @@
     }
   }
 }
+
+@media only screen
+and (max-device-width: 980px) {
+  header .nav-container .navbar-toggle {
+    display: block;
+    margin-top: 0.3em;
+    padding: 1.7em 1.5em;
+    background-color: rgba(189, 211, 255, 0.4);
+
+    .icon-bar {
+      width: 3.5em;
+      height: 5px;
+    }
+  }
+
+  header .nav-container nav a {
+    display: none;
+  }
+}
