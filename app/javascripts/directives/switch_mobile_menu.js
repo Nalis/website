@@ -11,8 +11,8 @@ angular.module('website').directive('switchMobileMenu',function($window){
 
       var resize = function() {
         var winWidth = $window.innerWidth;
-        if(winWidth > attrs['switchWidth'] && !scope['switchFlag']) {
-          scope['switchFlag'] = true;
+        if(winWidth > attrs['switchWidth'] && !scope[attrs['switchFlag']]) {
+          scope[attrs['switchFlag']] = true;
           scope.$apply();
         }
       };
